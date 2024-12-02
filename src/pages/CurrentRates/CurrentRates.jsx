@@ -80,20 +80,20 @@ export default function CurrentRates() {
     currentCurrency: "RUB",
   });
 
-  const [currentData, setCurrentData] = useState(data);
+  const [baseCurrency, setBaseCurrency] = useState(data);
+
 
   useEffect(() => {
     setCurrentCurrency(data.currentCurrency);
-    
   }, [data.currentCurrency]);
 
   useEffect(() => {
     if (ans.currentCurrency && ans.currentCurrencyIsCorrect) {
-      setCurrentData(ans);
+      setBaseCurrency(ans);
     }
   }, [ans.currentCurrency]);
 
-  const [rates] = useData(currentData);
+  const [rates] = useData(baseCurrency);
 
   useEffect(() => {
     if (Object.keys(rates).length > 0) {
