@@ -81,6 +81,7 @@ export default function CurrentRates() {
   });
 
   const [baseCurrency, setBaseCurrency] = useState(data);
+  const [currentRates, setCurrentRates] = useState({});
 
 
   useEffect(() => {
@@ -97,10 +98,17 @@ export default function CurrentRates() {
 
   useEffect(() => {
     if (Object.keys(rates).length > 0) {
-      console.log(rates);
+      // console.log(rates);
+      setCurrentRates(rates);
     }
   }, [rates]);
 
+  useEffect(() => {
+    if (Object.keys(currentRates).length > 0) {
+      console.log(currentRates);
+      setCurrentRates(rates);
+    }
+  }, [currentRates]);
   
   const onChange = (event) => {
     const { target } = event;
@@ -126,11 +134,11 @@ export default function CurrentRates() {
         </label>
         <div className="current-rates__list_wrapper">
           <h3 className="current-rates__label">Курс валют{ans.currentCurrencyIsCorrect}</h3>
-          <ul className="current-rates__list">{Object.keys(rates).map( 
+          <ul className="current-rates__list">{Object.keys(currentRates).map( 
           (item, idx) => <RatesListItem
             key={idx}
             currency={item}
-            rate={rates.item}
+            rate={currentRates.item}
             base={ans.currentCurrencyIsCorrect ? data.currentCurrency : ""}
           />
         )}
