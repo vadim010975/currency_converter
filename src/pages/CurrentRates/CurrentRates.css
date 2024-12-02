@@ -1,0 +1,51 @@
+.current-rates__fields {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: start;
+}
+
+.current-rates__label {
+  color: #555555;
+  font: bold 1.4rem/120% arial;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.input-wrapper {
+  margin-top: 0.4rem;
+  width: 12rem;
+}
+
+.current-rates__field {
+  box-sizing: border-box;
+  width: 12rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border: 2px solid #555555;
+  border-radius: 2px;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  box-shadow: 2px 2px 4px 0px rgba(85, 85, 85, 0.5) inset;
+  font: bold 1.4rem/120% arial;
+  color: #555555;
+}
+
+.current-rates__field.incorrect {
+  background-color:#fca8a8;
+}
+
+.current-rates__list_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.current-rates__list {
+  margin-top: 0.4rem;
+}

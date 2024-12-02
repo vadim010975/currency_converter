@@ -1,0 +1,51 @@
+section {
+  margin-top: 6rem;
+  width: 100%;
+}
+
+.converter__fields {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.converter__field {
+  box-sizing: border-box;
+  width: 12rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border: 2px solid #555555;
+  border-radius: 2px;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  box-shadow: 2px 2px 4px 0px rgba(85, 85, 85, 0.5) inset;
+  font: bold 1.4rem/120% arial;
+  color: #555555;
+}
+
+.converter__field[name=amount],
+.converter__field.converter__result {
+  width: 15rem;
+}
+
+.converter__field.incorrect {
+  background-color:#fca8a8;
+}
+
+.converter__field_in {
+  width: auto;
+  background-color: #cccccc;
+  color: #555555;
+  font: bold 1.4rem/120% arial;
+  line-height: 3rem;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.converter__result {
+  text-align: start;
+  line-height: 2.8rem;
+}
