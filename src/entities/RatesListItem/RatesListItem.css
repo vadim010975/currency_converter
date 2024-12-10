@@ -1,0 +1,62 @@
+.rates__list_item {
+  font: normal 1.2rem/120% arial;
+  text-transform: uppercase;
+  width: 12em;
+  color: #555555;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.rates__list_item_currency {
+  display: inline-block;
+  width: 2.1em;
+}
+
+.rates__list_item_rate {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+@media(max-width: 374px) {
+  .rates__list_item {
+    font-size: 0.8rem;
+  }
+}
+
+@media(min-width: 375px) {
+  .rates__list_item {
+    font-size: 1.0rem;
+  }
+}
+
+@media(min-width: 576px) {
+  .rates__list_item {
+    font-size: 1.0rem;
+  }
+}
+
+@media(min-width: 768px) {
+  .rates__list_item {
+    font-size: 1.0rem;
+  }
+}
+
+@media(min-width: 992px) {
+  .rates__list_item {
+    font-size: 1.2rem;
+  }
+}
+
+@media(min-width: 1200px) {
+  .rates__list_item {
+    font-size: 1.2rem;
+  }
+}
+
+@media(min-width: 1366px) {
+  .rates__list_item {
+    font-size: 1.2rem;
+  }
+}

@@ -1,11 +1,24 @@
 import "./ListCurrency.css";
-import { useContext, useState } from "react";
+import PropTypes from 'prop-types';
+import { useContext, useEffect, useState } from "react";
 import CurrencyContext from "../../contexts/CurrencyContext";
 import InputListItem from "../../entities/InputListItem/InputListItem";
 
 export default function ListCurrency(props) {
   const { list } = useContext(CurrencyContext);
   const [ listActivity, setListActiviti ] = useState(false);
+  const rootEl = document.querySelector("#root");
+
+  useEffect(() => {
+    const listEl = document.querySelector(".converter__list.active");
+    if (listEl) {
+      if (rootEl.offsetHeight < listEl.getBoundingClientRect().bottom) {
+        rootEl.style.height = listEl.getBoundingClientRect().bottom + "px";
+      }
+    } else {
+      rootEl.style.height = "auto";
+    }
+  });
 
   function onClick() {
     if (listActivity) {
@@ -33,4 +46,8 @@ export default function ListCurrency(props) {
       </ul>
     </>
   );
+}
+
+ListCurrency.propTypes = {
+  callback: PropTypes.func,
 }

@@ -1,6 +1,5 @@
+import PropTypes from 'prop-types';
 import "./InputListItem.css";
-import { useContext } from "react";
-import CurrencyContext from "../../contexts/CurrencyContext";
 
 export default function InputListItem(props) {
 
@@ -13,4 +12,9 @@ export default function InputListItem(props) {
       {props.item}
     </li>
   );
+}
+
+InputListItem.propTypes = {
+  item: PropTypes.string,
+  onClick: PropTypes.func,
 }

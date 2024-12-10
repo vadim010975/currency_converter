@@ -28,17 +28,31 @@ const router = createBrowserRouter([
       }
     ],
   },
-]);
+],
+  {
+    future: {
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_relativeSplatPath: true,
+      v7_skipActionErrorRevalidation: true,
+      v7_startTransition: true,
+    }
+  }
+);
 
 export default function App() {
-  const [ page, setPage ] = useState("first");
-  const [ list, setList ] = useState([]);
-  const [ amount, setAmount ] = useState(0);
-  const [ currentCurrency, setCurrentCurrency ] = useState("RUB");
-  const [ requiredCurrency, setRequiredCurrency ] = useState("USD");
-  const [ ans, setAns ] = useState({
+  const [page, setPage] = useState(location.pathname === "/rates.html" ? "last" : "first");
+  const [list, setList] = useState([]);
+  const [amount, setAmount] = useState(0);
+  const [currentCurrency, setCurrentCurrency] = useState("RUB");
+  const [requiredCurrency, setRequiredCurrency] = useState("USD");
+  const [ans, setAns] = useState({
+    amount: 0,
     amountIsCorrect: true,
+    currentCurrency: "RUB",
     currentCurrencyIsCorrect: true,
+    requiredCurrency: "USD",
     requiredCurrencyIsCorrect: true,
     result: null,
   });
@@ -46,8 +60,10 @@ export default function App() {
   useEffect(() => {
     fetch("https://www.cbr-xml-daily.ru/latest.js").then(resolve => {
       resolve.json().then(resolve => {
+        /*global fx*/
+        /*eslint no-undef: "error"*/
         fx.base = "RUB";
-        fx.rates = { ...resolve.rates, RUB: 1 };
+        fx.rates = { RUB: 1, ...resolve.rates };
         setList(Object.keys(fx.rates));
       });
     });
@@ -59,6 +75,9 @@ export default function App() {
       let result;
       if (report.allIsCorrect) {
         result = convert(amount, currentCurrency, requiredCurrency);
+        if (String(result).length > 14) {
+          result = +String(result).slice(0, 14);
+        }
         if (result === "0.00") {
           result = "";
         }
@@ -84,11 +103,13 @@ export default function App() {
 
   return (
     <>
-      <CurrencyContext.Provider value = {{
+      <CurrencyContext.Provider value={{
         list, setAmount, setCurrentCurrency, setRequiredCurrency, ans
       }}>
         <PageContext.Provider value={{ page, setPage }}>
-          <RouterProvider router={router} />
+          <RouterProvider
+            future={{ v7_startTransition: true, }}
+            router={router} />
         </PageContext.Provider>
       </CurrencyContext.Provider>
     </>

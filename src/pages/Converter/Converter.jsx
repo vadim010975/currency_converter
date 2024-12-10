@@ -8,21 +8,21 @@ export default function Converter() {
 
   const [data, setData] = useState({
     amount: "0",
-    currentCurrency: "EUR",
+    currentCurrency: "RUB",
     requiredCurrency: "USD"
   });
 
   useEffect(() => {
     setAmount(data.amount);
-  }, [data.amount]);
+  }, [data.amount, setAmount]);
 
   useEffect(() => {
     setCurrentCurrency(data.currentCurrency);
-  }, [data.currentCurrency]);
+  }, [data.currentCurrency, setCurrentCurrency]);
 
   useEffect(() => {
     setRequiredCurrency(data.requiredCurrency);
-  }, [data.requiredCurrency]);
+  }, [data.requiredCurrency, setRequiredCurrency]);
 
   const onChange = (event) => {
     const { target } = event;
@@ -70,7 +70,7 @@ export default function Converter() {
           <input type="text" name="requiredCurrency" className={"converter__field" + (ans.requiredCurrencyIsCorrect ? "" : " incorrect")} value={data.requiredCurrency} onChange={onChange} />
           <ListCurrency callback={(currency) => setData(oldData => ({ ...oldData, requiredCurrency: currency }))}/>
         </div>
-        <div className="converter__field converter__result">{ans.result ? ans.result : ""}</div>
+        <div className="converter__field converter__result">{ans.result ? ans.result.toFixed(2) : ""}</div>
       </div>
     </section>
   );

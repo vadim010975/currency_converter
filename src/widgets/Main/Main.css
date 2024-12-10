@@ -10,4 +10,10 @@ main {
 
 .input-wrapper {
   position: relative;
+  width: 12rem;
+}
+
+section {
+  margin-top: 2.2rem;
+  width: 100%;
 }
