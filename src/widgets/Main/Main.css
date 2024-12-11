@@ -1,0 +1,19 @@
+main {
+  box-sizing: border-box;
+  flex-grow: 1;
+  border-left: 2px solid rgb(85, 85, 85);
+  border-bottom: 2px solid rgb(85, 85, 85);
+  border-right: 2px solid rgb(85, 85, 85);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 12rem;
+}
+
+section {
+  margin-top: 2.2rem;
+  width: 100%;
+}

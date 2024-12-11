@@ -1,0 +1,11 @@
+#root {
+  max-width: 1366px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #cccccc;
+}

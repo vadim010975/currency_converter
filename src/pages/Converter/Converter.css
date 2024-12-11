@@ -1,0 +1,139 @@
+.converter__fields {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.converter__fields>
+.input-wrapper:first-of-type {
+  z-index: 2;
+}
+
+.converter__fields>
+.input-wrapper:nth-child(4) {
+  z-index: 1;
+}
+
+.converter__field {
+  box-sizing: border-box;
+  width: 12rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border: 2px solid #555555;
+  border-radius: 2px;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  box-shadow: 2px 2px 4px 0px rgba(85, 85, 85, 0.5) inset;
+  font-family: arial;
+  font-weight: bold;
+  font-stretch: 120%;
+  color: #555555;
+}
+
+.converter__field[name=amount],
+.converter__field.converter__result {
+  width: 15rem;
+}
+
+.converter__field.incorrect {
+  background-color:#fca8a8;
+}
+
+.converter__field_in {
+  width: auto;
+  background-color: #cccccc;
+  color: #555555;
+  font: bold 1.4rem/120% arial;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.converter__result {
+  text-align: start;
+  line-height: 2.8rem;
+}
+
+@media(max-width: 575px) {
+  .converter__fields {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-left: calc((100vw - 4rem - 4px - (15rem)) / 2);
+    padding-right: calc((100vw - 4rem - 4px - (15rem)) / 2);
+  }
+
+  .converter__field {
+    font-size: 0.8rem;
+  }
+
+  .converter__field_in {
+    width: 1em;
+    margin-left: calc((15rem - 1em) / 2);
+    margin-right: calc((15rem - 1em) / 2);
+    font-size: 0.8rem;
+  }
+
+}
+
+@media(min-width: 576px) {
+  .converter__fields {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-left: calc((100vw - 4rem - 4px - (15rem)) / 2);
+    padding-right: calc((100vw - 4rem - 4px - (15rem)) / 2);
+  }
+
+  .converter__field {
+    font-size: 1rem;
+  }
+
+  .converter__field_in {
+    width: 1em;
+    margin-left: calc((15rem - 1em) / 2);
+    margin-right: calc((15rem - 1em) / 2);
+    font-size: 1rem;
+  }
+}
+
+@media(min-width: 768px) {
+  .converter__fields {
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-left: calc((100vw - 4rem - 4px - (15rem + 2rem + 12rem)) / 2);
+    padding-right: calc((100vw - 4rem - 4px - (15rem + 2rem + 12rem)) / 2);
+  }
+
+  .converter__field {
+    font-size: 1.2rem;
+  }
+
+  .converter__field_in {
+    width: 1em;
+    margin-left: calc((15rem + 2rem + 12rem - 1em) / 2);
+    margin-right: calc((15rem + 2rem + 12rem - 1em) / 2);
+    font-size: 1.2rem;
+  }
+}
+
+@media(min-width: 1366px) {
+  .converter__fields {
+    flex-wrap: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .converter__field {
+    font-size: 1.4rem;
+  }
+
+  .converter__field_in {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 3rem;
+    font-size: 1.4rem;
+  }
+}

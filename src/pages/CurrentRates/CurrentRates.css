@@ -1,0 +1,120 @@
+.current-rates__fields {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  align-items: center;
+}
+
+.current-rates__label {
+  color: #555555;
+  font: bold 1.4rem/120% arial;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.current-rates__label>
+.input-wrapper {
+  margin-top: 0.4rem;
+}
+
+.current-rates__field {
+  box-sizing: border-box;
+  width: 12rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border: 2px solid #555555;
+  border-radius: 2px;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  box-shadow: 2px 2px 4px 0px rgba(85, 85, 85, 0.5) inset;
+  font: bold 1.4rem/120% arial;
+  color: #555555;
+}
+
+.current-rates__field.incorrect {
+  background-color:#fca8a8;
+}
+
+.current-rates__list_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.current-rates__list {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  justify-content: start;
+}
+
+@media(max-width: 374px) {
+  .current-rates__list {
+    padding-left: calc((100vw - 4rem - 4px - (0.8rem * 12 * 1)) / 2);
+  }
+
+  .current-rates__label,
+  .current-rates__field {
+    font-size: 0.8rem;
+  }
+}
+
+@media(min-width: 375px) {
+  .current-rates__list {
+    padding-left: calc((100vw - 4rem - 4px - (1rem * 12 * 1)) / 2);
+  }
+
+  .current-rates__label,
+  .current-rates__field {
+    font-size: 0.8rem;
+  }
+}
+
+@media(min-width: 576px) {
+  .current-rates__list {
+    padding-left: calc((100vw - 4rem - 4px - (1rem * 12 * 2)) / 2);
+  }
+
+  .current-rates__label,
+  .current-rates__field {
+    font-size: 1.1rem;
+  }
+}
+
+@media(min-width: 768px) {
+  .current-rates__list {
+    padding-left: calc((100vw - 4rem - 4px - (1rem * 12 * 3)) / 2);
+  }
+
+  .current-rates__label,
+  .current-rates__field {
+    font-size: 1.4rem;
+  }
+}
+
+@media(min-width: 992px) {
+  .current-rates__list {
+    padding-left: calc((100vw - 4rem - 4px - (1.2rem * 12 * 3)) / 2);
+  }
+}
+
+@media(min-width: 1200px) {
+  .current-rates__list {
+    padding-left: calc((100vw - 4rem - 4px - (1.2rem * 12 * 4)) / 2);
+  }
+}
+
+
+@media(min-width: 1366px) {
+  .current-rates__list {
+    padding-left: calc((1366px - 4rem - 4px - (1.2rem * 12 * 5)) / 2);
+  }
+}
+  

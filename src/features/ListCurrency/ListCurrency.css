@@ -1,0 +1,38 @@
+.converter__field_button {
+  position: absolute;
+  top: 20%;
+  right: 5px;
+  width: 1.4rem;
+  height: 70%;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.converter__field_button::after {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  right: 0px;
+  background-image: url(../../svg/dawn_arrow_grey.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1.4rem;
+}
+
+.converter__list {
+  display: none;
+  position: absolute;
+  width: 12rem;
+  background-color: rgba(255, 255, 255, .8);
+  margin: 0.4rem 0 0 0;
+  padding: 0;
+  text-align: start;
+  cursor: pointer;
+}
+
+.converter__list.active {
+  display: block;
+}
